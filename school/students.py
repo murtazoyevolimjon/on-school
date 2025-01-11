@@ -66,3 +66,11 @@ def enroll_in_course(
         student_email (str): The email of the student who is enrolling.
     """
     pass
+    
+
+
+    email = input("Input your email: ")
+    name = input("Enter your name: ")
+    password = input("Enter your password: ")
+    
+    students_data[email] = {"students_name": name, "students_pass": password, "enrolled_courses": []}

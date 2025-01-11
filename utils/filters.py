@@ -40,3 +40,15 @@ def filter_courses_by_price(courses_data: list[dict[str, str]], min_price: float
         list: A list of dictionaries containing courses whose price is between min_price and max_price.
     """
     pass
+    
+    result = []
+
+    for course in courses_data:
+        try:
+            course_price = float(course["price"])  # Ensure price is treated as a float
+            if min_price <= course_price <= max_price:
+                result.append(course)
+        except ValueError:
+            print(f"Invalid price value for course: {course.get('course_name', 'Unknown Course')}")
+    
+    return result
